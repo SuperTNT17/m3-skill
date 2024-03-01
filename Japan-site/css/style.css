@@ -167,7 +167,7 @@ form{
     padding: var(--tussenruimte);
 }
 
-.smallInput, .largeInput{
+.smallInput, textarea{
     width: 50rem;
     padding: 0.5rem;
 }
@@ -176,8 +176,9 @@ form{
     height: 3rem;
 }
 
-.largeInput{
-    height: 10rem;   
+textarea{
+    resize: none;
+    height: 10rem;
 }
 
 .formSubmit{
