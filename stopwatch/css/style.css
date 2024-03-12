@@ -1,13 +1,70 @@
-*{
+@import url("https://use.typekit.net/ieq8ymf.css");
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 62.5%;
 }
 
-body{
+body {
+    display: flex;
+    justify-content: space-around;
+    gap: 5rem;
     font-size: 2rem;
+}
+
+.dashboardElement {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: rgb(148, 148, 148);
+    width: 50rem;
+}
+
+#stopwatch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#js--timer {
+    font-family: "interstate-mono", monospace;
+    font-size: 10rem;
+}
+
+#stopwatchControls {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+
+#stopwatchControls>button {
+    width: 5rem;
+    height: 3rem;
+    border: none;
+}
+
+#stopwatchControls > button:hover{
+    filter: brightness(90%);
+}
+
+#stopwatchControls > button:active{
+    filter: brightness(85%);
+}
+
+#js--stop {
+    display: none;
+    background-color: rgb(226, 60, 60);
+}
+
+#js--start {
+    background-color: rgb(60, 226, 60);
+}
+
+#js--reset{
+    background-color: rgb(240, 240, 240);
 }

@@ -7,17 +7,16 @@ minutes = "0" + minutes;
 
 let startButton = document.getElementById("js--start");
 startButton.onclick = function () {
-    startButton.disabled = true;
-    stopButton.disabled = false;
-    interval = setInterval(count, 1);
+    startButton.style.display = "none";
+    stopButton.style.display = "inline";
+    interval = setInterval(count, 10);
 };
 
 let stopButton = document.getElementById("js--stop");
-stopButton.disabled = true;
 stopButton.onclick = function () {
     clearInterval(interval);
-    startButton.disabled = false;
-    stopButton.disabled = true;
+    startButton.style.display = "inline";
+    stopButton.style.display = "none";
 };
 
 const resetButton = document.getElementById("js--reset");
@@ -37,6 +36,9 @@ function count() {
     if (milliseconds == 100) {
         addSecond();
         milliseconds = 0;
+    };
+    if (milliseconds < 10) {
+        milliseconds = "0" + milliseconds;
     };
     timer.innerHTML = `${minutes}:${seconds}:${milliseconds}`;
 };
