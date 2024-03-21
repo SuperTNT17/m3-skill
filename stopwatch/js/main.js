@@ -85,7 +85,7 @@ function startRoll() {
 loadImage();
 function loadImage() {
     // data ophalen
-    let data = fetch("../data.json").then(
+    let data = fetch("data.json").then(
         function (nepData) {
             return nepData.json();
         }).then(
