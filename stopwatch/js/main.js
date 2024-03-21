@@ -7,6 +7,7 @@ minutes = "0" + minutes;
 
 let startButton = document.getElementById("js--start");
 startButton.onclick = function () {
+    startRoll();
     startButton.style.display = "none";
     stopButton.style.display = "inline";
     interval = setInterval(count, 10);
@@ -14,6 +15,7 @@ startButton.onclick = function () {
 
 let stopButton = document.getElementById("js--stop");
 stopButton.onclick = function () {
+    loadImage();
     clearInterval(interval);
     startButton.style.display = "inline";
     stopButton.style.display = "none";
@@ -43,7 +45,7 @@ function count() {
     timer.innerHTML = `${minutes}:${seconds}:${milliseconds}`;
 };
 
-function addSecond(){
+function addSecond() {
     seconds++;
     if (seconds == 60) {
         addMinute();
@@ -60,3 +62,37 @@ function addMinute() {
         minutes = "0" + minutes;
     };
 };
+
+let slider = document.getElementById("js--slider");
+slider.value = 2;
+
+let body = document.getElementsByTagName("body")[0];
+body.style.fontSize = slider.value + "rem";
+
+let sliderValue = document.getElementById("js--sliderValue");
+sliderValue.innerText = slider.value + "x";
+
+slider.addEventListener("input", (e) => {
+    sliderValue.innerText = slider.value + "x";
+    body.style.fontSize = slider.value + "rem";
+});
+
+let image = document.getElementById("js--image");
+function startRoll() {
+    image.src = "https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif";
+}
+
+loadImage();
+function loadImage() {
+    // data ophalen
+    let data = fetch("../data.json").then(
+        function (nepData) {
+            return nepData.json();
+        }).then(
+            function (echteData) {
+                console.log(echteData.text);
+                image.src = echteData.img;
+                image.alt = echteData.text;
+            }
+        );
+}

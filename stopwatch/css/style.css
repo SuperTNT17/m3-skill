@@ -13,27 +13,33 @@ html {
 body {
     display: flex;
     justify-content: space-around;
-    gap: 5rem;
+    align-items: center;
     font-size: 2rem;
+    height: 100vh;
+    /* background-image: url("https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif"); */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .dashboardElement {
-    margin: 1rem;
-    padding: 1rem;
-    background-color: rgb(148, 148, 148);
-    width: 50rem;
-}
-
-#stopwatch {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: rgb(180, 180, 180);
+    width: 50rem;
+    height: 50rem;
+    row-gap: 1rem;
+    font-size: 2em;
+    border-radius: 10%;
+    box-shadow: 2rem 1rem 1rem lightgray;
 }
 
 #js--timer {
     font-family: "interstate-mono", monospace;
-    font-size: 10rem;
+    /* font-size: 10rem; */
 }
 
 #stopwatchControls {
@@ -48,11 +54,11 @@ body {
     border: none;
 }
 
-#stopwatchControls > button:hover{
+#stopwatchControls>button:hover {
     filter: brightness(90%);
 }
 
-#stopwatchControls > button:active{
+#stopwatchControls>button:active {
     filter: brightness(85%);
 }
 
@@ -65,6 +71,47 @@ body {
     background-color: rgb(60, 226, 60);
 }
 
-#js--reset{
+#js--reset {
     background-color: rgb(240, 240, 240);
+}
+
+#js--slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(0,255,0) 100%);
+    height: 2rem;
+    width: 15rem;
+    border: 0.1rem solid gray;
+}
+
+#js--slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(0,255,0) 100%);
+    border-radius: 20%;
+    border: 0.1rem solid black;
+    cursor: pointer;
+}
+
+#js--slider::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(0,255,0) 100%);
+    border: 0.1rem solid black;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+#js--sliderValue {
+    font-family: "interstate-mono", monospace;
+}
+
+#js--image {
+    border-radius: 10%;
+    width: 100%;
+    height: 100%;
 }
