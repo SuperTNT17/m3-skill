@@ -1,4 +1,6 @@
 {
-    "text": "judging cat",
-    "img": "img/judgingCat.webp"
+    "images":[
+        {"text": "judging cat","img": "img/judgingCat.webp"},
+        {"text": "rick roll","img": "img/rickRoll.gif"}
+    ]
 }

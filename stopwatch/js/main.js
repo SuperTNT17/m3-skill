@@ -4,6 +4,18 @@ let minutes = 0;
 let interval;
 seconds = "0" + seconds;
 minutes = "0" + minutes;
+let imageNumber = 0;
+let data = getData();
+function getData() {
+    return fetch("data.json").then(
+        function (data){
+            return data.json();
+        }
+    )
+};
+console.log(data);
+
+let parseTest = JSON.parse(fetch("data.json"));
 
 let startButton = document.getElementById("js--start");
 startButton.onclick = function () {
@@ -82,17 +94,9 @@ function startRoll() {
     image.src = "https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif";
 }
 
-loadImage();
-function loadImage() {
-    // data ophalen
-    let data = fetch("data.json").then(
-        function (nepData) {
-            return nepData.json();
-        }).then(
-            function (echteData) {
-                console.log(echteData.text);
-                image.src = echteData.img;
-                image.alt = echteData.text;
-            }
-        );
+
+function loadImage(data) {
+    console.log(data.images[imageNumber].text);
+    image.src = data.images[imageNumber].image;
+    image.alt = data.images[imageNumber].text;
 }
