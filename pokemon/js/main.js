@@ -3,8 +3,7 @@ let randomNumber = Math.floor(Math.random() * 1025 + 1);
 let pokemonName = "";
 let randomShiny = Math.floor(Math.random() * 8192);
 console.log(randomNumber);
-console.log(randomShiny)
-
+console.log(randomShiny);
 
 
 let pokemon = fetch("https://pokeapi.co/api/v2/pokemon/" + randomNumber)
@@ -13,11 +12,12 @@ let pokemon = fetch("https://pokeapi.co/api/v2/pokemon/" + randomNumber)
     })
     .then(function(realData){
         pokemonName = realData.name;
-        pokemonText.innerText = `A wild ${pokemonName} has appeared!`;
+        pokemonText.innerText = `A wild ${pokemonName} appeared!`;
         if (randomShiny != 0) {
             pokemonImage.src = realData.sprites.front_default;
         }
         else{
+            pokemonText.style.color = "orange";
             pokemonImage.src = realData.sprites.front_shiny;
         }
     });
