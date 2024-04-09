@@ -42,12 +42,16 @@ ul{
 
 .card--second{
     grid-column: 5 / 13;
-    grid-row: 1 / 9;
+    grid-row: 1 / 10;
     padding: 4rem;
     overflow: scroll;
 }
 
-.card--second > ul{
+.card--second > h1{
+    margin-bottom: 2rem;
+}
+
+#js--pokemon-storage{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -55,7 +59,7 @@ ul{
     width: 100%;
 }
 
-.card--second > ul > li{
+.js--pokemon-in-storage{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -87,6 +91,10 @@ ul{
     background-color: #ee1515;
     color: #eee;
     border-radius: 0.5rem;
+}
+
+.card--third > button:hover{
+    cursor: pointer;
 }
 
 #js--again-button{
